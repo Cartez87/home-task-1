@@ -6,7 +6,7 @@ import Toggle from './components/Toggle';
 
 function App() {
 
-  function Search(search) {
+  function searchHandler(search) {
       console.log(search);
   }
 
@@ -15,7 +15,7 @@ function App() {
       <h1 className="text-center">Hello React</h1>
         <Counter />
         <SearchForm 
-            onSearch={Search}
+            onSearch={searchHandler}
       />
       <Toggle />
 

@@ -20,11 +20,10 @@ export default class Toggle extends Component {
             ]
         }
         
-        this.addOption = this.addOption.bind(this);
     }
 
-    addOption() {
-        this.selectedOptions.push({ option: "" });
+    addOption = () => {
+        this.setState(this.selectedOptions({ option: "" }));
     }
 
     render() {

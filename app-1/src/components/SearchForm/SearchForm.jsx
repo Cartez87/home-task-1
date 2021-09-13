@@ -11,8 +11,9 @@ function SearchForm({ onSearch }) {
         setSearch(newSearch);
     }
 
-    function Search() {
+    function searchHandler() {
         const newSearch = { text: search.text };
+        
         if(onSearch) {
             onSearch(newSearch);
         }
@@ -20,8 +21,16 @@ function SearchForm({ onSearch }) {
 
     return (
         <form className="search-form d-flex">
-            <input type="text" onChange={onChange} className="form-control" placeholder="What do you want to watch?"/>
-            <button onClick={Search} type="button">Search</button>
+            <input 
+                type="text" 
+                onChange={onChange} 
+                className="form-control" 
+                placeholder="What do you want to watch?"/>
+            <button 
+                onClick={searchHandler} 
+                type="button">
+                Search
+            </button>
         </form>
     )
 }
