@@ -4,19 +4,15 @@ import './SearchForm.css';
 
 function SearchForm({ onSearch }) {
 
-    const [ search, setSearch ] = useState({ text: "" });
+    const [ query, setQuery ] = useState({ text: "" });
 
     function onChange(e) {
-        const newSearch = { text: e.target.value };
-        setSearch(newSearch);
+        const newQuery = { text: e.target.value };
+        setQuery(newQuery);
     }
 
-    function searchHandler() {
-        const newSearch = { text: search.text };
-        
-        if(onSearch) {
-            onSearch(newSearch);
-        }
+    function handleSearch() {
+        onSearch({ text: query.text });
     }
 
     return (
@@ -27,7 +23,7 @@ function SearchForm({ onSearch }) {
                 className="form-control" 
                 placeholder="What do you want to watch?"/>
             <button 
-                onClick={searchHandler} 
+                onClick={handleSearch} 
                 type="button">
                 Search
             </button>
